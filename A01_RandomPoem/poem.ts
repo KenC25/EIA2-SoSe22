@@ -1,3 +1,10 @@
+/*
+Aufgabe: L01.1_Zufallsgedicht
+Name: Kenan Coskun
+Matrikel: 265335
+Datum: 26.03.22
+*/
+
 let names:string [] = ["Harry","Hermine","Ron","Hagrid","Snape","Dumbledore"];
 let verbs:string [] = ["braut","liebt","studiert","hasst","zaubert","zerstört"];
 let objects:string [] = ["Zaubertränke","den Gnom","Lupin","Hogwarts","die Karte des Rumtreibers","Dementoren"];

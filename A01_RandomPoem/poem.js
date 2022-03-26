@@ -1,4 +1,10 @@
 "use strict";
+/*
+Aufgabe: L01.1_Zufallsgedicht
+Name: Kenan Coskun
+Matrikel: 265335
+Datum: 26.03.22
+*/
 let names = ["Harry", "Hermine", "Ron", "Hagrid", "Snape", "Dumbledore"];
 let verbs = ["braut", "liebt", "studiert", "hasst", "zaubert", "zerstört"];
 let objects = ["Zaubertränke", "den Gnom", "Lupin", "Hogwarts", "die Karte des Rumtreibers", "Dementoren"];
