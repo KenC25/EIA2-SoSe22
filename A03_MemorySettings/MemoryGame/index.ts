@@ -1,3 +1,9 @@
+/*
+Aufgabe: L03_MemorySettings
+Name: Kenan Coskun
+Matrikel: 265335
+Datum: 21.04.22
+*/
 namespace MemoryGame {
     let form: HTMLElement = document.querySelector("form");
     let button: HTMLButtonElement = document.querySelector("button");

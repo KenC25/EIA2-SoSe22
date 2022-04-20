@@ -1,3 +1,9 @@
+/*
+Aufgabe: L03_MemorySettings
+Name: Kenan Coskun
+Matrikel: 265335
+Datum: 21.04.22
+*/
 var MemoryGame;
 (function (MemoryGame) {
     let form = document.querySelector("form");
