@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="index.js" async></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Memory Game</h1>
+    <form>
+        Anzahl der Karten <br>
+        <input type="number" name="anzahl" class="gameInputs" min="6" max="18" step="6">
+        <br>
+        <br>
+        Größe der Karten <br>
+        <input type="range" class="gameInputs" id="slider" min="25" max="100" step="25">
+        <br>
+        <br>
+        Hintergrundfarbe <br>
+        <input type="color" value="#4699cc" class="gameInputs" name="backgroundCol">
+        <br>
+        <br>
+        Kartenrückseite <br>
+        <input type="color" value="#cccccc" class="gameInputs" name="cardsCol">
+        <br>
+        <br>
+        Schriftfarbe <br>
+        <input type="color" value="#ffffff" class="gameInputs" name="fontCol">
+        <br>
+        <br>
+        <label for="fonts">Wähle eine Schrift aus</label>
+        <br>
+        <select id="fonts" name="fonts">
+            <option value="Arial">Arial</option>
+            <option value="TimesNewRoman">Times New Roman</option>
+            <option value="Calibri">Calibri</option>
+        </select>
+        <br>
+        <br>
+        <button class="gameInputs" type="button">Start</button>
+    </form>
+</body>
+</html>
