@@ -21,11 +21,10 @@ body{
     opacity: 0.5;
 }
 
-.numberHidden {
-    visibility: hidden;
+.numberHidden:hover {
+    opacity: 0.5;
 }
 
-.numberVisible {
-    position: relative;
-    top: 42.5px;
+.numberVisible:hover{
+    opacity: 0.5;
 }

@@ -14,12 +14,9 @@ namespace MemoryGame {
 
 function hndButtonClick() : void {
     // Fragebogen verkleinern
-    form.style.visibility = "hidden";
-    form.style.width = "5px";
-    form.style.height = "5px";
+    form.style.display = "none";
     button.removeEventListener("click", hndButtonClick);
-    
-    
+
     // FormData übertragen in Typescript
         let formData: FormData = new FormData(document.forms[0]);
         let fieldColor: string = formData.get("backgroundCol").toString();
@@ -36,111 +33,57 @@ function hndButtonClick() : void {
         body.style.color = fontColor;
         body.style.fontFamily = fontFam;
 
-        function hndCardClick (_event: MouseEvent){
-            const spanValue: any = document.querySelector(".numberHidden");
-            spanValue.className = spanValue.className.replace(" numberHidden", "").trim();
-            spanValue.className += " numberVisible";
+        function hndCardClick (_event: MouseEvent) : void{
+            const spanValue: any = _event.currentTarget;
+            spanValue.className = spanValue.className.replace("numberHidden", "").trim();
+            spanValue.className += "numberVisible";
+            spanValue.style.color = fontColor;
+            spanValue.style.fontStyle = "italic";
         }
-
-        // Wenn Anzahl der Karten == 6
-                if (cardAnzNum == 6){
-                    for (let i: number = 0; i < 1; i++){
-                        let fieldDiv: HTMLElement = document.createElement("div");
-                        document.body.appendChild(fieldDiv);
-                        fieldDiv.setAttribute("id", "field");
-                        // Feld erstellen
-                        for (let j: number = 0; j < 6; j++){
-                            let newCardDiv: HTMLDivElement = document.body.querySelector("#field");
-                            newCardDiv.appendChild(document.createElement("div")).setAttribute("class", "card" +j);
-                            let newSpan: HTMLElement = document.body.querySelector(".card" +j);
-                            newSpan.appendChild(document.createElement("span")).setAttribute("class", "cardValue" +j);
-                            // Karten erstellen 
-                            let card: HTMLDivElement = document.querySelector(".card" +j);
-                                card.setAttribute("class", "cardClick");
-                                card.addEventListener("click", hndCardClick);
-                                card.style.display = "inline-block";
-                                card.style.padding = "0 10px 0 10px"
-                                card.style.border = "solid";
-                                card.style.borderColor = "black"
-                                card.style.width = "100px";
-                                card.style.height = "100px";
-                                card.style.backgroundColor = cardsColor;
-                                card.style.cursor = "pointer";
-                            // Kartenwerte zuteilen
-                            let cardWert: HTMLSpanElement = document.querySelector(".cardValue" +j);
-                                cardWert.innerHTML = arraySix.splice(0, 1).toString();
-                                cardWert.className += " numberHidden"
-                                cardWert.style.position = "relative";
-                                cardWert.style.top = "42.5px";
-
-                        }
+        // Erstellung der Karten
+            // Feld erstellen
+                let timer: HTMLElement = document.createElement("h2");
+                document.body.appendChild(timer);
+                    if (cardAnzNum == 6){
+                        timer.innerHTML = "Timer: <br> Level: Easy";
+                    } else if (cardAnzNum == 12){
+                        timer.innerHTML = "Timer: <br> Level: Normal";
+                    } else if (cardAnzNum == 18){
+                        timer.innerHTML = "Timer: <br> Level: Hard";
                     }
-                } 
-                // Wenn Anzahl der Karten == 12
-                else if(cardAnzNum == 12){
-                    for (let i: number = 0; i < 1; i++){
-                        let fieldDiv: HTMLElement = document.createElement("div");
-                        document.body.appendChild(fieldDiv);
-                        fieldDiv.setAttribute("id", "field");
-                        // Feld erstellen
-                        for (let j: number = 0; j < 12; j++){
-                            let newCardDiv: HTMLDivElement = document.body.querySelector("#field");
-                            newCardDiv.appendChild(document.createElement("div")).setAttribute("class", "card" +j);
-                            let newSpan: HTMLElement = document.body.querySelector(".card" +j);
-                            newSpan.appendChild(document.createElement("span")).setAttribute("class", "cardValue" +j);
-                            // Karten erstellen
-                            let card: HTMLDivElement = document.querySelector(".card" +j);
-                                card.setAttribute("class", "cardClick");
-                                card.addEventListener("click", hndCardClick);
-                                card.style.display = "inline-block";
-                                card.style.padding = "0 10px 0 10px"
-                                card.style.border = "solid";
-                                card.style.borderColor = "black"
-                                card.style.width = "100px";
-                                card.style.height = "100px";
-                                card.style.backgroundColor = cardsColor;
-                                card.style.cursor = "pointer";
-                                // Kartenwerte zuteilen
-                                let cardWert: HTMLSpanElement = document.querySelector(".cardValue" +j);
-                                    cardWert.innerHTML = arrayTwelve.splice(0, 1).toString();
-                                    cardWert.className += " numberHidden"
-                                    cardWert.style.position = "relative";
-                                    cardWert.style.top = "42.5px";
-                        }
+                let fieldDiv: HTMLElement = document.createElement("div");
+                document.body.appendChild(fieldDiv);
+                fieldDiv.setAttribute("id", "field");
+                    for (let j: number = 0; j < cardAnzNum; j++){
+                        let spliceArrSix: string = arraySix.splice(0, 1).toString();
+                        let spliceArrTwelve: string = arrayTwelve.splice(0, 1).toString();
+                        let spliceArrEighteen: string = arrayEighteen.splice(0, 1).toString();
+                        let newCardDiv: HTMLDivElement = document.body.querySelector("#field");
+                        newCardDiv.appendChild(document.createElement("div")).setAttribute("class", "card" +j);
+                        let newSpan: HTMLElement = document.body.querySelector(".card" +j);
+                        newSpan.appendChild(document.createElement("span")).setAttribute("class", "cardValue" +j);
+                        // Karten erstellen 
+                        let card: HTMLDivElement = document.querySelector(".card" +j);
+                            card.addEventListener("click", hndCardClick);
+                            if (cardAnzNum == 6){
+                                card.innerHTML = `<br> <br> ${spliceArrSix}`;
+                                card.style.color = cardsColor;
+                            } else if (cardAnzNum == 12){
+                                card.innerHTML = `<br> <br> ${spliceArrTwelve}`;
+                                card.style.color = cardsColor;
+                            } else if (cardAnzNum == 18){
+                                card.innerHTML = `<br> <br> ${spliceArrEighteen}`;
+                                card.style.color = cardsColor;
+                            }
+                            card.setAttribute("class", "numberHidden");
+                            card.style.display = "inline-block";
+                            card.style.padding = "0 10px 0 10px"
+                            card.style.border = "solid";
+                            card.style.borderColor = "black"
+                            card.style.width = "100px";
+                            card.style.height = "100px";
+                            card.style.backgroundColor = cardsColor;
+                            card.style.cursor = "pointer";
                     }
-                }
-                // Wenn Anzahl der Karten == 18
-                else {
-                        for (let i: number = 0; i < 1; i++){
-                            let fieldDiv: HTMLElement = document.createElement("div");
-                            document.body.appendChild(fieldDiv);
-                            fieldDiv.setAttribute("id", "field");
-                            // Feld erstellen
-                            for (let j: number = 0; j < 18; j++){
-                            let newCardDiv: HTMLDivElement = document.body.querySelector("#field");
-                            newCardDiv.appendChild(document.createElement("div")).setAttribute("class", "card" +j);
-                            let newSpan: HTMLElement = document.body.querySelector(".card" +j);
-                            newSpan.appendChild(document.createElement("span")).setAttribute("class", "cardValue" +j);
-                            // Karten erstellen
-                            let card: HTMLDivElement = document.querySelector(".card" +j);
-                                card.setAttribute("class", "cardClick");
-                                card.addEventListener("click", hndCardClick);
-                                card.style.display = "inline-block";
-                                card.style.padding = "0 10px 0 10px"
-                                card.style.border = "solid";
-                                card.style.borderColor = "black"
-                                card.style.width = "100px";
-                                card.style.height = "100px";
-                                card.style.backgroundColor = cardsColor;
-                                card.style.cursor = "pointer";
-                                // Kartenwerte zuteilen
-                                let cardWert: HTMLSpanElement = document.querySelector(".cardValue" +j);
-                                    cardWert.innerHTML = arrayEighteen.splice(0, 1).toString();
-                                    cardWert.className += " numberHidden"
-                                    cardWert.style.position = "relative";
-                                    cardWert.style.top = "42.5px";
-                    }
-                } 
-            }
-        }
+            } 
     }
