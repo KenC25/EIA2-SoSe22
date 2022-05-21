@@ -710,3 +710,4 @@ var Aufgabe8_2;
         drawForeground();
     }
 })(Aufgabe8_2 || (Aufgabe8_2 = {}));
+//# sourceMappingURL=script.js.map
