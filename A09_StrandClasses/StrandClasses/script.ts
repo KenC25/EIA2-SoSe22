@@ -1,3 +1,10 @@
+/*
+Aufgabe: L09.2_StrandClasses
+Name: Kenan Coskun
+Matrikel: 265335
+Datum: 30.05.22
+Quellen: In Zusammenarbeit mit Zara Kocak
+*/
 namespace Aufgabe9_2
 {
     window.addEventListener("load", hndLoad);
