@@ -2,7 +2,7 @@
 Aufgabe: L10.2_Strand: Polymorphie
 Name: Kenan Coskun
 Matrikel: 265335
-Datum: 16.06.22
+Datum: 17.06.22
 Quellen: In Zusammenarbeit mit Zara Kocak
 */
 
@@ -34,7 +34,7 @@ namespace Aufgabe10_2 {
 
     function hndLoad(): void {
 
-        // Objekte erstellen
+    // Objekte erstellen
 
         // Sonne
             let sunOne: sun = new sun();
@@ -67,10 +67,11 @@ namespace Aufgabe10_2 {
             let palmTwo: palm2 = new palm2();
             objects.push(palmOne, palmTwo);
 
-        // Umbrella
+        // Sonnenschirm
             let umbrellaOne: umbrella1 = new umbrella1();
             objects.push(umbrellaOne);
 
+        // Animation
             window.requestAnimationFrame(function animation () {
             crc2.clearRect(0, 0, canvas.width, canvas.height);
             drawBackground();

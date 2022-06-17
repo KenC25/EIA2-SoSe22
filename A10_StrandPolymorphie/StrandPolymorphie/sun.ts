@@ -9,7 +9,7 @@ namespace Aufgabe10_2 {
 
         drawObject(): void {
 
-            // Sonne zeichnen
+        // Sonne zeichnen
 
             crc2.save();
             crc2.translate(this.x, this.y);
