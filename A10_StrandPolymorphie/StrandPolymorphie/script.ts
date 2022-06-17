@@ -3,6 +3,7 @@ Aufgabe: L10.2_Strand: Polymorphie
 Name: Kenan Coskun
 Matrikel: 265335
 Datum: 16.06.22
+Quellen: In Zusammenarbeit mit Zara Kocak
 */
 
 namespace Aufgabe10_2 {
