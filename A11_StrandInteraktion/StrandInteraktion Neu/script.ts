@@ -3,6 +3,7 @@ Aufgabe: L11_Strand: Interaktion - Aktualisierte Version
 Name: Kenan Coskun
 Matrikel: 265335
 Datum: 07.07.22
+Quellen: Code Snippets aus Jirkas Asteroid-Code aus EIA2 Vorlesungsvideos
 */
 
 namespace Aufgabe11 {
