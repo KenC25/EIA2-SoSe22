@@ -2,7 +2,7 @@ var Aufgabe11;
 (function (Aufgabe11) {
     class umbrella extends Aufgabe11.moveObj {
         constructor(_position) {
-            super(_position, new Aufgabe11.Vector(0, 0));
+            super(_position, new Aufgabe11.Vector(0, 0), 0);
         }
         drawObject() {
             // Sonnenschirm zeichnen

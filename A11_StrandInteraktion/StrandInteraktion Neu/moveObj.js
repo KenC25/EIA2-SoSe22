@@ -1,9 +1,10 @@
 var Aufgabe11;
 (function (Aufgabe11) {
     class moveObj {
-        constructor(_position, _velocity) {
+        constructor(_position, _velocity, _size) {
             this.position = _position;
             this.velocity = _velocity;
+            this.size = _size;
         }
         move(_timeslice) {
             let offset = new Aufgabe11.Vector(this.velocity.x, this.velocity.y);

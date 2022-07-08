@@ -2,7 +2,7 @@ var Aufgabe11;
 (function (Aufgabe11) {
     class cloud extends Aufgabe11.moveObj {
         constructor(_position, _velocity) {
-            super(_position, _velocity);
+            super(_position, _velocity, 0);
         }
         drawObject() {
             // Wolke zeichnen

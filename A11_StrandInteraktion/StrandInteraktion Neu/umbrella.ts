@@ -2,7 +2,7 @@ namespace Aufgabe11 {
     export class umbrella extends moveObj {
 
         constructor(_position: Vector){
-            super(_position, new Vector(0,0));
+            super(_position, new Vector(0,0), 0);
         }
 
         public drawObject(): void {

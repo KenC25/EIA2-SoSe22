@@ -2,10 +2,12 @@ namespace Aufgabe11 {
     export abstract class moveObj {
         public position: Vector;
         public velocity: Vector;
+        public size: number;
 
-        constructor(_position: Vector, _velocity: Vector){
+        constructor(_position: Vector, _velocity: Vector, _size: number){
             this.position = _position;
             this.velocity = _velocity;
+            this.size = _size;
         }
 
         public abstract drawObject(): void;

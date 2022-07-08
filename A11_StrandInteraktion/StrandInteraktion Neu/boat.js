@@ -1,8 +1,8 @@
 var Aufgabe11;
 (function (Aufgabe11) {
     class boat extends Aufgabe11.moveObj {
-        constructor(_position, _velocity) {
-            super(_position, _velocity);
+        constructor(_position, _velocity, _size) {
+            super(_position, _velocity, _size);
         }
         drawObject() {
             // Boot zeichnen
@@ -10,6 +10,7 @@ var Aufgabe11;
             Aufgabe11.crc2.translate(this.position.x, this.position.y);
             Aufgabe11.crc2.beginPath();
             Aufgabe11.crc2.translate(-200, 0);
+            Aufgabe11.crc2.scale(this.size, this.size);
             Aufgabe11.crc2.moveTo(75, 269.5);
             Aufgabe11.crc2.lineTo(105, 269.5);
             Aufgabe11.crc2.lineTo(105, 300);
@@ -54,6 +55,11 @@ var Aufgabe11;
         }
         move(_timeslice) {
             super.move(_timeslice);
+        }
+        isHit(_hotspot) {
+            let hitsize = 50 * this.size;
+            let difference = new Aufgabe11.Vector(_hotspot.x - this.position.x, _hotspot.y - this.position.y);
+            return (Math.abs(difference.x) < hitsize && Math.abs(difference.y) < hitsize);
         }
     }
     Aufgabe11.boat = boat;

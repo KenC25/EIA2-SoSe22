@@ -2,7 +2,7 @@
 Aufgabe: L11_Strand: Interaktion - Aktualisierte Version
 Name: Kenan Coskun
 Matrikel: 265335
-Datum: 07.07.22
+Datum: 08.07.22
 Quellen: Code Snippets aus Jirkas Asteroid-Code aus EIA2 Vorlesungsvideos
 */
 var Aufgabe11;
@@ -25,6 +25,10 @@ var Aufgabe11;
     // Methoden aufrufen
     function hndLoad() {
         drawBackground();
+        Aufgabe11.canvas.addEventListener("mousedown", function (_event) {
+            let hotspot = new Aufgabe11.Vector(_event.clientX - Aufgabe11.crc2.canvas.offsetLeft, _event.clientY - Aufgabe11.crc2.canvas.offsetTop);
+            console.log(hotspot);
+        });
         // Objekte erstellen
         // Sonne
         // Vektoren erstellen
@@ -52,7 +56,7 @@ var Aufgabe11;
         let posBoat1 = new Aufgabe11.Vector(0, 0);
         let velBoat1 = new Aufgabe11.Vector(5, 0);
         // Boot 1
-        let boatOne = new Aufgabe11.boat(posBoat1, velBoat1);
+        let boatOne = new Aufgabe11.boat(posBoat1, velBoat1, 1);
         // Boot in Array
         objects.push(boatOne);
         // Möwen

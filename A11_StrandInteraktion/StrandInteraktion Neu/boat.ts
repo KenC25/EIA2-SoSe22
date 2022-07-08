@@ -1,7 +1,7 @@
 namespace Aufgabe11 {
     export class boat extends moveObj {
-        constructor(_position: Vector, _velocity: Vector) {
-            super(_position, _velocity);
+        constructor(_position: Vector, _velocity: Vector, _size: number) {
+            super(_position, _velocity, _size);
         }
 
         public drawObject(): void {
@@ -12,6 +12,7 @@ namespace Aufgabe11 {
             crc2.translate(this.position.x, this.position.y);
             crc2.beginPath();
             crc2.translate(-200, 0);
+            crc2.scale(this.size, this.size);
             crc2.moveTo(75, 269.5);
             crc2.lineTo(105, 269.5);
             crc2.lineTo(105, 300);
@@ -60,6 +61,12 @@ namespace Aufgabe11 {
 
         public move(_timeslice: number): void{
             super.move(_timeslice);
+        }
+
+        public isHit(_hotspot: Vector): boolean {
+            let hitsize: number = 50 * this.size;
+            let difference: Vector = new Vector(_hotspot.x - this.position.x, _hotspot.y - this.position.y);
+            return (Math.abs(difference.x) < hitsize && Math.abs(difference.y) < hitsize);
         }
     }
 }

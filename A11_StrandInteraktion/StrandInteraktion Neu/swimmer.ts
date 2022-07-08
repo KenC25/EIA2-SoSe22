@@ -2,7 +2,7 @@ namespace Aufgabe11 {
     export class swimmer extends moveObj {
 
         constructor(_position: Vector, _velocity: Vector){
-            super(_position, _velocity);
+            super(_position, _velocity, 0);
         }
 
         public drawObject(): void {
